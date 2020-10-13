@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trivia jose</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<body>
+
+    <div class="container mt-5">
+        <div>
+            <div class="form-group">
+                <label for="question-numbers">Cantidad de preguntas</label>
+                <select onchange="getQuestions()" class="form-control" id="question-numbers">
+                  <option value="5">5</option>
+                  <option value="10">10</option>
+                  <option value="15">15</option>
+                  <option value="20">20</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="select-category">Categoría</label>
+                <select class="form-control" id="select-category">
+                  <option value="9">General know</option>
+                  <option value="13">Entretaiment: Musicals & Theatres</option>
+                  <option value="15">Entretaiment: Video Games</option>
+                  <option value="19">Sciencie: Mathematics</option>
+                  <option value="31">Entretaiment: Japanese Anime & Manga</option>
+                </select>
+              </div>
+
+              <!-- <div class="form-group">
+                <label for="difficulty">Dificultad</label>
+                <select class="form-control" id="difficulty">
+                  <option value="1">Easy</option>
+                  <option value="2">Medium</option>
+                  <option value="3">Hard</option>
+                </select>
+              </div> -->
+        </div>
+
+        <div id="container-card">
+
+        </div>
+        <!-- Aqui van las cards -->
+    </div>
+
+    <script src="./js/main.js"></script>
+</body>
+</html>
