@@ -1,29 +1,38 @@
 
-
 function getQuestions() {
     const cuestionNumbers = document.getElementById('question-numbers').value;
     const typeCategory = document.getElementById('select-category').value;
+    const typeDifficulty = document.getElementById('diff').value;
+    const selectType = document.getElementById('select-type').value;
 
-    fetch(`https://opentdb.com/api.php?amount=${cuestionNumbers}&category=${typeCategory}&difficulty=hard&type=multiple`)
+    fetch(`https://opentdb.com/api.php?amount=${cuestionNumbers}&category=${typeCategory}&difficulty=${typeDifficulty}&type=${selectType}`)
         .then( response => response.json() )
         .then( data => printCards(data.results) )
 }
 
-// function printCategory(getCategory) {
-//     const tCategory = document.getElementById('form-category');
-//     tCategory.innerHTML = '';
+function getCategories() {
 
-//     getCategory.forEach( selectCategory => {
-//         const category = `<div class="form-group">
-//                             <label for="exampleFormControlSelect1">Categoría</label>
-//                             <select class="form-control" id="exampleFormControlSelect1">
-//                             <option>${selectCategory.category}</option>
-//                             </select>
-//                         </div>`;
-//         tCategory.innerHTML += category;
-//     })
-    
-// }
+    fetch(`https://opentdb.com/api_category.php`)
+        .then(response => response.json())
+        .then( data => printCategory(data.trivia_categories))   
+}
+
+getCategories();
+
+function printCategory(getCategories) {
+    const tCategory = document.getElementById('select-category');
+    tCategory.innerHTML = '';
+
+    getCategories.forEach( selectCategory => {
+        const category = returnCategory(selectCategory)
+        tCategory.innerHTML += category;
+    })  
+}
+
+function returnCategory(getCategory) {
+    const options = `<option value="${getCategory.id}">${getCategory.name}</option>`;
+    return options;
+} 
 
 
 function printCards(questions) {
@@ -38,7 +47,7 @@ function printCards(questions) {
 
 function cardHTML(ques) {
 
-    const card = `<div class="card"">
+    const card = `<div class="card">
                         <div class="card-body">
                         <h5 class="card-title">${ques.category}</h5>
                         <h6 class="card-subtitle mb-2 text-muted">${ques.question}</h6>

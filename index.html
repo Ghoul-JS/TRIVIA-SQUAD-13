@@ -22,23 +22,27 @@
 
               <div class="form-group">
                 <label for="select-category">Categoría</label>
-                <select class="form-control" id="select-category">
-                  <option value="9">General know</option>
-                  <option value="13">Entretaiment: Musicals & Theatres</option>
-                  <option value="15">Entretaiment: Video Games</option>
-                  <option value="19">Sciencie: Mathematics</option>
-                  <option value="31">Entretaiment: Japanese Anime & Manga</option>
+                <select onchange="getQuestions()" class="form-control" id="select-category">
+                  <!--Etiquetas option -->
                 </select>
               </div>
 
-              <!-- <div class="form-group">
-                <label for="difficulty">Dificultad</label>
-                <select class="form-control" id="difficulty">
-                  <option value="1">Easy</option>
-                  <option value="2">Medium</option>
-                  <option value="3">Hard</option>
+              <div class="form-group">
+                <label onchange="getQuestions()" for="diff">Dificultad</label>
+                <select class="form-control" id="diff">
+                  <option value="easy">Easy</option>
+                  <option value="medium">Medium</option>
+                  <option value="hard">Hard</option>
                 </select>
-              </div> -->
+              </div>
+
+              <div class="form-group">
+                <label onchange="getQuestions()" for="select-type">Dificultad</label>
+                <select class="form-control" id="select-type">
+                  <option value="multiple">Multiple choise</option>
+                  <option value="boolean">True / False</option>
+                </select>
+              </div>
         </div>
 
         <div id="container-card">
