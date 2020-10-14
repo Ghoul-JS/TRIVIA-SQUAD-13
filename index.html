@@ -4,15 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trivia jose</title>
+    <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 </head>
 <body>
 
     <div class="container mt-5">
         <div>
+          <h1 class="text-center">API TRIVIA</h1>
             <div class="form-group">
                 <label for="question-numbers">Cantidad de preguntas</label>
-                <select onchange="getQuestions()" class="form-control" id="question-numbers">
+                <select class="form-control" id="question-numbers">
                   <option value="5">5</option>
                   <option value="10">10</option>
                   <option value="15">15</option>
@@ -22,13 +24,13 @@
 
               <div class="form-group">
                 <label for="select-category">Categoría</label>
-                <select onchange="getQuestions()" class="form-control" id="select-category">
+                <select class="form-control" id="select-category">
                   <!--Etiquetas option -->
                 </select>
               </div>
 
               <div class="form-group">
-                <label onchange="getQuestions()" for="diff">Dificultad</label>
+                <label for="diff">Dificultad</label>
                 <select class="form-control" id="diff">
                   <option value="easy">Easy</option>
                   <option value="medium">Medium</option>
@@ -37,15 +39,16 @@
               </div>
 
               <div class="form-group">
-                <label onchange="getQuestions()" for="select-type">Dificultad</label>
+                <label for="select-type">Dificultad</label>
                 <select class="form-control" id="select-type">
                   <option value="multiple">Multiple choise</option>
                   <option value="boolean">True / False</option>
                 </select>
               </div>
+              <button onclick="getQuestions()" class="btn btn-primary mb-4" type="submit">Actualizar</button>
         </div>
 
-        <div id="container-card">
+        <div class="m-5" id="container-card">
 
         </div>
         <!-- Aqui van las cards -->
